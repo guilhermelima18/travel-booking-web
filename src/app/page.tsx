@@ -1,11 +1,5 @@
-import { QuickSearch } from "@/components/quick-search";
-import { TravelSearch } from "@/components/travel-search";
+import { HomeTemplate } from "@/templates/home";
 
 export default function Home() {
-  return (
-    <div>
-      <TravelSearch />
-      <QuickSearch />
-    </div>
-  );
+  return <HomeTemplate />;
 }
