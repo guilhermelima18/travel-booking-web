@@ -1,30 +1,27 @@
 "use client";
 
-import { Button } from "./button";
-import { CurrencyInput } from "./currency-input";
-import { DatePicker } from "./datepicker";
-import { Input } from "./input";
+import { Button } from "@/components/button";
+import { CurrencyInput } from "@/components/inputs/currency-input";
+import { DatePicker } from "@/components/datepicker";
+import { Input } from "@/components/inputs/input";
 
 export const TravelSearch = () => {
   return (
-    <div className="container mx-auto p-5 bg-search-background bg-cover bg-center bg-no-repeat">
+    <div className="w-full h-80 bg-search-background bg-contain bg-center bg-no-repeat p-5 flex flex-col items-center justify-center">
       <h1 className="font-semibold text-2xl text-primaryDarker text-center">
         Encontre a sua próxima <span className="text-primary">viagem!</span>
       </h1>
 
-      <div className="flex flex-col gap-4 mt-5">
-        <Input placeholder="Onde você quer ir?" />
+      <div className="flex items-center justify-center mt-5 gap-3">
+        <Input className="w-60" placeholder="Onde você quer ir?" />
+        <DatePicker
+          className="w-60"
+          placeholderText="Data de ida"
+          onChange={() => {}}
+        />
+        <CurrencyInput className="w-60" placeholder="Orçamento" />
 
-        <div className="flex gap-4">
-          <DatePicker
-            className="w-full"
-            placeholderText="Data de ida"
-            onChange={() => {}}
-          />
-          <CurrencyInput placeholder="Orçamento" />
-        </div>
-
-        <Button>Buscar</Button>
+        <Button className="w-60">Buscar</Button>
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { signIn, signOut, useSession } from "next-auth/react";
 import { AiOutlineMenu } from "react-icons/ai";
 import logo from "@/assets/logo.svg";
 import { useState } from "react";
+import Link from "next/link";
 
 const STATUS_AUTHENTICATED = "authenticated";
 const STATUS_UNAUTHENTICATED = "unauthenticated";
@@ -27,7 +28,9 @@ export const Header = () => {
 
   return (
     <div className="container mx-auto p-5 py-0 h-[95px] flex items-center justify-between">
-      <Image src={logo} alt="Logo Travel Booking" width={32} height={32} />
+      <Link href="/">
+        <Image src={logo} alt="Logo Travel Booking" width={32} height={32} />
+      </Link>
 
       {status === STATUS_UNAUTHENTICATED && (
         <button

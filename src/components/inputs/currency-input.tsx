@@ -19,7 +19,7 @@ export const CurrencyInput = ({
   );
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex flex-col">
       <_CurrencyInput
         lang="pt-BR"
         className={inputClassName}

@@ -28,7 +28,7 @@ const DatePickerBase = (
   );
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex flex-col">
       <_DatePicker
         dateFormat="dd/MM/yyyy"
         locale="pt-BR"

@@ -1,16 +1,21 @@
 import { prisma } from "@/libs/prisma";
-import { TripItem } from "./trip-item";
-import { Trip } from "@prisma/client";
+import { RecommendedTripItem } from "./recommended-trip-item";
+import { TripProps } from "@/types/trip";
 
-const getTrips = async () => {
+async function getTrips() {
   return await prisma.trip.findMany();
-};
+}
 
 export const RecommendedTrips = async () => {
   const trips = await getTrips();
 
+  const tripsFormattedTypes = trips.map((trip) => ({
+    ...trip,
+    pricePerDay: Number(trip.pricePerDay),
+  }));
+
   return (
-    <div className="container mx-auto p-5">
+    <div className="container mx-auto p-5 mt-10">
       <div className="flex items-center">
         <div className="w-full h-[1px] bg-grayLighter" />
         <h2 className="font-medium text-grayPrimary whitespace-nowrap mx-2">
@@ -19,9 +24,9 @@ export const RecommendedTrips = async () => {
         <div className="w-full h-[1px] bg-grayLighter" />
       </div>
 
-      <div className="flex flex-col items-center mt-5 gap-5">
-        {trips.map((trip: Trip) => (
-          <TripItem key={trip.id} trip={trip} />
+      <div className="grid grid-cols-4 justify-items-center mt-10 gap-10">
+        {tripsFormattedTypes.map((trip: TripProps) => (
+          <RecommendedTripItem key={trip.id} trip={trip} />
         ))}
       </div>
     </div>

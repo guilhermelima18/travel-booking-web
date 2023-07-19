@@ -19,7 +19,7 @@ const InputBase = (
   );
 
   return (
-    <div className="flex w-full flex-col">
+    <div className="flex flex-col">
       <input ref={ref} className={inputClassName} {...props} />
       {error && errorMessage && (
         <span className="mt-1 text-xs text-red-400">{errorMessage}</span>
