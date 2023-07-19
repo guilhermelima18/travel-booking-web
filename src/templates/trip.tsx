@@ -2,6 +2,7 @@ import Image from "next/image";
 import { prisma } from "@/libs/prisma";
 import ReactCountryFlag from "react-country-flag";
 import { AboutTrip } from "@/components/about-trip";
+import { MapTrips } from "@/components/maps-trip";
 
 interface TripTemplateProps {
   tripId: string;
@@ -55,6 +56,8 @@ export const TripTemplate = async ({ tripId }: TripTemplateProps) => {
       </div>
 
       <AboutTrip trip={tripFormattedTypes} />
+
+      <MapTrips />
     </div>
   );
 };
