@@ -15,7 +15,7 @@ export const RecommendedTrips = async () => {
   }));
 
   return (
-    <div className="container mx-auto p-5 mt-10">
+    <div className="container mx-auto mt-10">
       <div className="flex items-center">
         <div className="w-full h-[1px] bg-grayLighter" />
         <h2 className="font-medium text-grayPrimary whitespace-nowrap mx-2">

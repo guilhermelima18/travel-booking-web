@@ -4,10 +4,10 @@ import { TravelSearch } from "@/components/travel-search";
 
 export const HomeTemplate = () => {
   return (
-    <div>
+    <>
       <TravelSearch />
       <QuickSearch />
       <RecommendedTrips />
-    </div>
+    </>
   );
 };

@@ -2,6 +2,8 @@
 
 import GoogleMapReact from "google-map-react";
 
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY_MAPS as string;
+
 const AnyReactComponent = ({ text }: any) => <div>{text}</div>;
 
 export const MapTrips = () => {
@@ -18,10 +20,10 @@ export const MapTrips = () => {
   };
 
   return (
-    <div className="w-full h-[500px] my-10 flex flex-col">
+    <div className="w-full h-[500px] mt-10 flex flex-col">
       <h3 className="font-semibold text-primaryDarker mb-5">Localização</h3>
       <GoogleMapReact
-        bootstrapURLKeys={{ key: "AIzaSyBXNiuH6M2-rKrKinzv3pHX_KVIbhZXHMw" }}
+        bootstrapURLKeys={{ key: API_KEY }}
         defaultCenter={defaultProps.center}
         defaultZoom={defaultProps.zoom}
         yesIWantToUseGoogleMapApiInternals

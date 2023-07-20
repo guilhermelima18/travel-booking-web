@@ -25,20 +25,20 @@ export const TripTemplate = async ({ tripId }: TripTemplateProps) => {
   };
 
   return (
-    <div className="bg-red-500 container mx-auto w-full h-screen">
+    <div className="container mx-auto px-5 w-full">
       <header className="flex flex-col gap-2">
-        <h1 className="text-2xl font-extrabold">Pousada Maravista</h1>
+        <h1 className="text-2xl font-extrabold">{trip?.name}</h1>
         <h4 className="flex items-center gap-3 underline">
-          <ReactCountryFlag countryCode={trip.countryCode} svg />
+          <ReactCountryFlag countryCode={trip?.countryCode} svg />
           {trip?.location}
         </h4>
       </header>
-      <div className="w-full h-[250px] flex gap-3 mt-10">
+      <div className="w-full flex gap-3 mt-10">
         <Image
           src={trip?.coverImage}
           alt={trip?.name}
           width={800}
-          height={300}
+          height={100}
           className="rounded-lg"
         />
         <div className="grid grid-cols-2 gap-3">
@@ -47,8 +47,8 @@ export const TripTemplate = async ({ tripId }: TripTemplateProps) => {
               key={image}
               src={image}
               alt={trip?.name}
-              width={600}
-              height={600}
+              width={500}
+              height={100}
               className="rounded-lg"
             />
           ))}
